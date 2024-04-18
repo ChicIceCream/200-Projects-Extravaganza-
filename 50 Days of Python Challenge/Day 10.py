@@ -5,15 +5,4 @@
 
 # print(hide_password())
 
-######################################################################### 
 
-def bonus_challenge(list):
-    new_list = []
-    for number in list:
-        string_number = str(number)
-        new_list.append(number)
-
-    return new_list
-
-list = [1000000, 2356989, 2354672, 9878098]
-print(bonus_challenge(list))
