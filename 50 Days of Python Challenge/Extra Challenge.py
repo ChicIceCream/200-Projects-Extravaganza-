@@ -15,4 +15,3 @@ def age_in_minutes():
     return f'You are around {minutes} minutes old right now!'
 
 print(age_in_minutes())
-
