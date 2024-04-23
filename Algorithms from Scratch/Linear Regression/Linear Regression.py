@@ -3,8 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression 
 
-
-
 # data = pd.read_csv("data.csv")
 data2 = pd.read_csv("Linear Regression\data2.csv")
 # print(data)
