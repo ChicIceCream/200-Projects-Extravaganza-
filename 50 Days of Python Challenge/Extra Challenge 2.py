@@ -7,7 +7,7 @@ def your_salary(name, rate, rate_overtime, periods):
     
     salary = "{:,.2f}".format(salary)
     
-    return f'Teacher : {name} \nPeriods : {periods} \nGross Salary : {(salary)}'
+    return f'Teacher : {name} \nPeriods : {periods} \nGross Salary : {salary}'
 
 
 
