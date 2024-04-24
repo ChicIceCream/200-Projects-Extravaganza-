@@ -5,11 +5,15 @@ def your_salary(name, rate, rate_overtime, periods):
     else:
         salary = (100 * periods)
     
-    return f'Teacher : {name}'
+    salary = "{:,.2f}".format(salary)
+    
+    return f'Teacher : {name} \nPeriods : {periods} \nGross Salary : {(salary)}'
+
 
 
 teacher_name = input("What is the teachers name? : ")
-salary = int(input(f"What is {teacher_name}'s salary? : "))
 period_number = int(input("How many periods have they taught this month? : "))
 rate = int(input(f"What is {teacher_name}'s rate for each period they take? : "))
 rate_overtime = int(input(f"What is their rate for overtime? : "))
+
+print(your_salary(teacher_name, rate, rate_overtime, period_number))
