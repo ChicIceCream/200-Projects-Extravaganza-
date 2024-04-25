@@ -3,6 +3,7 @@ import os.path
 
 import tkinter.messagebox
 from tkinter import *
+from tkinter import simpledialog
 
 import numpy as np
 import PIL
@@ -39,6 +40,10 @@ class DrawingClassifier:
     def classes_prompt(self):
         msg = Tk()
         msg.withdraw()
-    
+        
+        self.proj_name = simpledialog.askstring('Project Name', "Please enter your project name down below!", parent=msg)
+        if os.path.exists(self.proj_name):
+            with open(f"{self.proj_name}/{self.proj_name}_data.pikle", "rb") as f:
+                data = pickle.load(f)
     def init_gui(self) -> None:
         pass
