@@ -1,31 +1,46 @@
 def addition(a, b):
     try: 
-        if a + b == True:
-            return a + b
-    except ValueError:
-        return "Please enter the correct values"
+        return a + b
+    except (TypeError, ValueError):
+        return "Please enter valid numeric values"
 
-def substract(a, b):
+def subtract(a, b):
     try: 
-        if a - b == True:
-            return a - b
-    except ValueError:
-        return "Please enter the correct values"
+        return a - b
+    except (TypeError, ValueError):
+        return "Please enter valid numeric values"
 
 def multiply(a, b):
     try: 
-        if a * b == True:
-            return a * b
-    except ValueError:
-        return "Please enter the correct values"
+        return a * b
+    except (TypeError, ValueError):
+        return "Please enter valid numeric values"
 
 def division(a, b):
-    try: 
-        if a / b == True:
-            return a / b
-    except ValueError:
-        return "Please enter the correct values"
-    except ZeroDivisionError:
-        return "Do not divide by 0"
+    try:
+        if b == 0:
+            raise ZeroDivisionError
+        return a / b
+    except (ZeroDivisionError, TypeError, ValueError):
+        return "Invalid operation: division by zero or non-numeric input"
 
-print(division(3, "a"))
+def calculator():
+    operation = input("Enter operation (+, -, *, /): ")
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        if operation == '+':
+            result = addition(num1, num2)
+        elif operation == '-':
+            result = subtract(num1, num2)
+        elif operation == '*':
+            result = multiply(num1, num2)
+        elif operation == '/':
+            result = division(num1, num2)
+        else:
+            result = "Invalid operation"
+        print("Result:", result)
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+
+calculator()
