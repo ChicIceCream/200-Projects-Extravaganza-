@@ -13,5 +13,4 @@ def sort_words(string):
     
     return sorted(letters)
 
-
 print(sort_words('love life'))
