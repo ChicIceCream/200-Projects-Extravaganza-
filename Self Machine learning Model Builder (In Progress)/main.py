@@ -146,7 +146,7 @@ class DrawingClassifier:
     def save(self, class_num):
         self.image1.save("temp.png")
         img = PIL.Image.open("temp.png")
-        img.thumbnail((50, 50), PIL.Image.ANTIALIAS)
+        img.thumbnail((50, 50), PIL.Image.Resampling.LANCZOS)
 
         if class_num == 1:
             img.save(f"{self.proj_name}/{self.class1}/{self.class1_counter}.png", "PNG")
@@ -201,7 +201,7 @@ class DrawingClassifier:
     def predict(self):
         self.image1.save("temp.png")
         img = PIL.Image.open("temp.png")
-        img.thumbnail((50, 50), PIL.Image.ANTIALIAS)
+        img.thumbnail((50, 50), PIL.Image.Resampling.LANCZOS)
         img.save("predictshape.png", "PNG")
 
         img = cv.imread("predictshape.png")[:, :, 0]
