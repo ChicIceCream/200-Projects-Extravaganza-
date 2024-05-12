@@ -1,9 +1,9 @@
 def index_position(string):
     index = []
     
-    for letter in string:
+    for i, letter in enumerate(string):
         if letter.lower() == letter:
-            index.append(letter.index())
+            index.append(i)
     
     return index
 
