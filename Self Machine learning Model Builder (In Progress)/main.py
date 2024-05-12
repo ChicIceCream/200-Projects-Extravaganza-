@@ -77,7 +77,7 @@ class DrawingClassifier:
         WHITE = (255, 255, 255)
 
         self.root = Tk()
-        self.root.title(f"NeuralNine Drawing Classifier Alpha v0.2 - {self.proj_name}")
+        self.root.title(f"Abhivyakt Bhati's AI for HI  - {self.proj_name}") # HI means human intelligence
 
         self.canvas = Canvas(self.root, width=WIDTH-10, height=HEIGHT-10, bg="white")
         self.canvas.pack(expand=YES, fill=BOTH)
@@ -196,7 +196,7 @@ class DrawingClassifier:
         img_list = img_list.reshape(self.class1_counter - 1 + self.class2_counter - 1 + self.class3_counter - 1, 2500)
 
         self.clf.fit(img_list, class_list)
-        tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", "Model successfully trained!", parent=self.root)
+        tkinter.messagebox.showinfo("Chic's Drawing Classifier", "Model successfully trained!", parent=self.root)
 
     def predict(self):
         self.image1.save("temp.png")
@@ -208,11 +208,11 @@ class DrawingClassifier:
         img = img.reshape(2500)
         prediction = self.clf.predict([img])
         if prediction[0] == 1:
-            tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", f"The drawing is probably a {self.class1}", parent=self.root)
+            tkinter.messagebox.showinfo("Chic's Drawing Classifier", f"The drawing is probably a {self.class1}", parent=self.root)
         elif prediction[0] == 2:
-            tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", f"The drawing is probably a {self.class2}", parent=self.root)
+            tkinter.messagebox.showinfo("Chic's Drawing Classifier", f"The drawing is probably a {self.class2}", parent=self.root)
         elif prediction[0] == 3:
-            tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", f"The drawing is probably a {self.class3}", parent=self.root)
+            tkinter.messagebox.showinfo("Chic's Drawing Classifier", f"The drawing is probably a {self.class3}", parent=self.root)
 
     def rotate_model(self):
         if isinstance(self.clf, LinearSVC):
@@ -234,20 +234,20 @@ class DrawingClassifier:
         file_path = filedialog.asksaveasfilename(defaultextension="pickle")
         with open(file_path, "wb") as f:
             pickle.dump(self.clf, f)
-        tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", "Model successfully saved!", parent=self.root)
+        tkinter.messagebox.showinfo("Chic's Drawing Classifier", "Model successfully saved!", parent=self.root)
 
     def load_model(self):
         file_path = filedialog.askopenfilename()
         with open(file_path, "rb") as f:
             self.clf = pickle.load(f)
-        tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", "Model successfully loaded!", parent=self.root)
+        tkinter.messagebox.showinfo("Chic's Drawing Classifier", "Model successfully loaded!", parent=self.root)
 
     def save_everything(self):
         data = {"c1": self.class1, "c2": self.class2, "c3": self.class3, "c1c": self.class1_counter,
                 "c2c": self.class2_counter, "c3c": self.class3_counter, "clf": self.clf, "pname": self.proj_name}
         with open(f"{self.proj_name}/{self.proj_name}_data.pickle", "wb") as f:
             pickle.dump(data, f)
-        tkinter.messagebox.showinfo("NeuralNine Drawing Classifier", "Project successfully saved!", parent=self.root)
+        tkinter.messagebox.showinfo("Chic's Drawing Classifier", "Project successfully saved!", parent=self.root)
 
     def on_closing(self):
         answer = tkinter.messagebox.askyesnocancel("Quit?", "Do you want to save your work?", parent=self.root)
