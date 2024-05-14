@@ -5,7 +5,7 @@ from newspaper import Article
 
 nltk.download('punkt')
 
-url = 'https://economictimes.indiatimes.com/tech/startups/pine-labs-owned-setu-teams-up-with-sarvam-ai-to-build-llm-for-financial-services/articleshow/109926155.cms?from=mdr'
+url = 'https://arxiv.org/pdf/1502.03044'
 
 article = Article(url)
 
