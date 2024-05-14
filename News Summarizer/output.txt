@@ -1,0 +1,8 @@
+Title : What is a large language model (LLM)?
+Authors : []
+Publication Date : None
+Summary = Copy article linkWhat is a large language model (LLM)?
+A large language model (LLM) is a type of artificial intelligence (AI) program that can recognize and generate text, among other tasks.
+Deep learning involves the probabilistic analysis of unstructured data, which eventually enables the deep learning model to recognize distinctions between pieces of content without human intervention.
+From this, a deep learning model could conclude (correctly) that these characters are among the most likely to appear in English-language text.
+Transformer models are able to learn context — especially important for human language, which is highly context-dependent.
