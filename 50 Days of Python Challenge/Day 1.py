@@ -7,7 +7,7 @@ number), and returns the square root of the number if it is divisible by
 """
 
 def divide_square(num):
-    """Gives the root if number is divisible by 5, else gives its remainder"""
+    """Gives the root of number is divisible by 5, else gives its remainder"""
     
     if num % 5 == 0:
         # ** is used to check for root
