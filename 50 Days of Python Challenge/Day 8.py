@@ -12,6 +12,22 @@ def odd_even(list):
         # print(f'{list[left]} and {list[right]}')
         return list[right] - list[left]
 
-list = [1,2,4,6]
-print(odd_even(list))
+
+# print(odd_even(list))
 # print(f'{6 % 2}')
+# your_list = [1,4,5,6,7]
+my_list = [1,2,3,4,6]
+
+def odd_even2(list):
+    for num in list:
+        if num % 2 == 0:
+            even = num
+    
+    for num in list:
+        if num % 2 != 0:
+            odd = num
+            break
+        
+    return even, odd
+
+print(odd_even2(my_list))

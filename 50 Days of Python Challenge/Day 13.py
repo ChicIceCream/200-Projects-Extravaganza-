@@ -18,4 +18,3 @@ def your_vat():
     return f'The total price is : ${int(value + (value * (VAT/100)))}' # Calculates the end answer
 
 print(your_vat())
-

@@ -6,4 +6,3 @@ def same_in_reverse(string):
     return reversed_str == string
 
 print(same_in_reverse("dad"))
-

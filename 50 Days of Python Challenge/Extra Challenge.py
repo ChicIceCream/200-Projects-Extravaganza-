@@ -10,7 +10,7 @@ def age_in_minutes():
             print("Please give me a value of 4 numbers")
     
     years_old_now = 2024 - year
-    minutes = years_old_now * 12 * 30 * 24 * 60
+    minutes = years_old_now * 365 * 24 * 60
     
     return f'You are around {minutes} minutes old right now!'
 
