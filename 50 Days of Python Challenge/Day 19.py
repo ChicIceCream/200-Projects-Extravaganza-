@@ -3,6 +3,10 @@ def count_words(string):
     
     return len(words)
 
+def trial(string):
+    words = string.replace(" ", ",")
+    return words
+
 def count_elements(string):
     words = string.split()
     
@@ -13,5 +17,6 @@ def count_elements(string):
     return characters
 
 sentence = f"I love learning"
-print(f"Number of words: {count_words(sentence)}")  # Output: 3
-print(f"Number of elements: {count_elements(sentence)}")  # Output: 13
+# print(f"Number of words: {count_words(sentence)}")  # Output: 3
+# print(f"Number of elements: {count_elements(sentence)}")  # Output: 13\
+print(trial("sentence"))
