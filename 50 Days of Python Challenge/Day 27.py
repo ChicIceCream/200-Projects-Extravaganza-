@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 def unique_numbers(numbers):
     hashmap = defaultdict(int)
     
