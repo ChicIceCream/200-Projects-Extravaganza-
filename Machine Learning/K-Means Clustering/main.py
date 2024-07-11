@@ -10,3 +10,5 @@ data = scale(digits.data)
 
 model = KMeans(n_clusters=10, init='random', n_init=10)
 model.fit(data)
+
+print(model.predict(data))
