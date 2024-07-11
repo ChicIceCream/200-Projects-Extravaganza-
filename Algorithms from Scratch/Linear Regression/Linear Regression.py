@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
+# from sklearn.linear_model import LinearRegression
 
 # Read the data from a CSV file
-data2 = pd.read_csv("Linear Regression\\data2.csv")
+data2 = pd.read_csv("Algorithms from Scratch\Linear Regression\data2.csv")
 
 # Function to calculate the total error for a given line (slope and intercept)
 def loss_function(m, c, points):
