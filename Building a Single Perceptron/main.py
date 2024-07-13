@@ -19,3 +19,4 @@ prediction = [predict(i) for i in inputs]
 
 
 # print(f'Prediction : {prediction}') # This output is pretty much random
+# Rest is done in google colab
