@@ -2,14 +2,14 @@ from collections import defaultdict
 
 
 def longest_word(array):
-    return numberOfLetters(max(array))
-
-def numberOfLetters(array):
+    
     hashmap = defaultdict(int)
     for word in array:
-        for letter in word:
-            hashmap[word] += 1
+        hashmap[word] = len(word)
     
-    return hashmap.values()
+    longest = max(hashmap, key=hashmap.get)
+    
+    return hashmap[longest], longest
+
 
 print(longest_word(['Java', 'JavaScript', 'Python']))
