@@ -22,3 +22,4 @@ output = "a" # closest vowel is a
 print(nearest_vowel("i"))
 output = "i" # i is a vowel, so return itself
 print(nearest_vowel("z"))
+output = "u" # to make sure there is no wrapping
