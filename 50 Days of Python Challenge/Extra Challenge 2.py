@@ -12,7 +12,7 @@ def your_salary():
     
     salary = "{:,.2f}".format(salary)
     
-    return f'Teacher : {name} \nPeriods : {periods} \nGross Salary : {salary}'
+    return f'Teacher : {teacher_name} \nPeriods : {periods} \nGross Salary : {salary}'
 
 
 print(your_salary())
