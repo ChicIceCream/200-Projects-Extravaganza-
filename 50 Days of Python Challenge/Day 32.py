@@ -1,5 +1,5 @@
 def password_validator():
-    while True:
+    while True: # runs forever
         password = input("Enter your password: ")
         
         if len(password) < 8:  # longer than 8 letters
