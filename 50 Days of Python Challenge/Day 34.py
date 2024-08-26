@@ -8,4 +8,5 @@ def just_digits():
             if word.isdigit():
                 result.append(word)
     return result
+
 print(just_digits())
