@@ -5,6 +5,6 @@ def inter_section(list1, list2):
             if num == number:
                 result.append(num)
     
-    return result
+    return tuple(result)
 
 print(inter_section([20, 30, 60, 65, 75, 80, 85], [42, 30, 80, 65, 68, 88, 95]))
