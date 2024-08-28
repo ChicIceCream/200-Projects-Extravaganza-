@@ -26,21 +26,22 @@ def division(a, b):
 
 def calculator():
     operation = input("Enter operation (+, -, *, /): ")
-    try:
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
-        if operation == '+':
-            result = addition(num1, num2)
-        elif operation == '-':
-            result = subtract(num1, num2)
-        elif operation == '*':
-            result = multiply(num1, num2)
-        elif operation == '/':
-            result = division(num1, num2)
-        else:
-            result = "Invalid operation"
-        print("Result:", result)
-    except ValueError:
-        print("Invalid input. Please enter numeric values.")
+    while True:
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+            if operation == '+':
+                result = addition(num1, num2)
+            elif operation == '-':
+                result = subtract(num1, num2)
+            elif operation == '*':
+                result = multiply(num1, num2)
+            elif operation == '/':
+                result = division(num1, num2)
+            else:
+                result = "Invalid operation"
+            print("Result:", result)
+        except ValueError:
+            print("Invalid input. Please enter numeric values.")
 
 calculator()
