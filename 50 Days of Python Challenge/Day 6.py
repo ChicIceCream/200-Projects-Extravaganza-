@@ -1,4 +1,4 @@
-def user_name(email):
+def my_function(email):
     name = ""
     for letter in email:
         if letter != '@':
@@ -8,4 +8,4 @@ def user_name(email):
     return name
 
 email = "ben@gmail.com"
-print(user_name(email))
+print(my_function(email))
