@@ -7,7 +7,3 @@ def only_floats(a, b):
         count += 1
     
     return count
-
-a = 2.333
-b = 3
-print(only_floats(a, b))
