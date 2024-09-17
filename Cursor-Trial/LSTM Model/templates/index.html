@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Few-Shot Keyword Spotter</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Few-Shot Keyword Spotter</h1>
+    
+    <h2>Train the Model</h2>
+    <textarea id="keywords" rows="3" cols="50" placeholder="Enter keywords (comma-separated)"></textarea><br>
+    <textarea id="non-keywords" rows="3" cols="50" placeholder="Enter non-keywords (comma-separated)"></textarea><br>
+    <button onclick="trainModel()">Train Model</button>
+    
+    <h2>Test the Model</h2>
+    <input type="text" id="test-text" placeholder="Enter text to test">
+    <button onclick="testModel()">Test</button>
+    <p id="result"></p>
+
+    <script>
+        function trainModel() {
+            const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim());
+            const nonKeywords = document.getElementById('non-keywords').value.split(',').map(k => k.trim());
+            
+            axios.post('/train', {
+                keywords: keywords,
+                non_keywords: nonKeywords
+            })
+            .then(response => {
+                alert(response.data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function testModel() {
+            const text = document.getElementById('test-text').value;
+            
+            axios.post('/predict', {
+                text: text
+            })
+            .then(response => {
+                const prediction = response.data.prediction;
+                document.getElementById('result').innerText = `Prediction: ${prediction}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

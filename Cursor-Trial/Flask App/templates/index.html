@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Todo App</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="content" required>
+        <button type="submit">Add Todo</button>
+    </form>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <span {% if todo.completed %}style="text-decoration: line-through;"{% endif %}>
+                    {{ todo.content }}
+                </span>
+                <a href="{{ url_for('complete', id=todo.id) }}">Toggle</a>
+                <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

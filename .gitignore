@@ -1,3 +1,4 @@
 **/.env
 docker
 generative-ai-docs
+**/.venv
