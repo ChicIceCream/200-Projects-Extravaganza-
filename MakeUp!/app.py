@@ -3,7 +3,6 @@ import cv2
 import mediapipe as mp
 import itertools
 import numpy as np
-from PIL import Image
 
 # Class for applying virtual makeup using OpenCV and MediaPipe
 class MakeupApplication:
