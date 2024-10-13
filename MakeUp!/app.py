@@ -178,11 +178,7 @@ enable = st.checkbox("Enable camera for real-time filter")
 
 if enable:
     # Access the video stream from the camera
-    for i in range(5):  # Try the first 5 indices
-        camera = cv2.VideoCapture(i)
-        if camera.isOpened():
-            print(f"Camera opened at index {i}")
-        
+    camera = cv2.VideoCapture(0)  # 0 is the default camera
 
     # Set frame width and height
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
