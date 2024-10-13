@@ -4,6 +4,7 @@ import mediapipe as mp
 import itertools
 import numpy as np
 
+
 # Class for applying virtual makeup using OpenCV and MediaPipe
 class MakeupApplication:
     def __init__(self, min_detection_confidence=0.5, min_tracking_confidence=0.5):
