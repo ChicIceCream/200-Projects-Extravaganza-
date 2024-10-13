@@ -1,5 +1,5 @@
 import streamlit as st
-import opencv as cv2
+import cv2
 import mediapipe as mp
 import itertools
 import numpy as np
