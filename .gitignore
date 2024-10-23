@@ -4,3 +4,4 @@ generative-ai-docs
 **/.venv
 all trials
 .cursorrules
+.devcontainer
