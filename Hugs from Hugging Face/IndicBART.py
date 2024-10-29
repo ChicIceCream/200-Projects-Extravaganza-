@@ -1,5 +1,5 @@
-from dotenv import loadenv
-loadenv()
+from dotenv import load_dotenv
+load_dotenv()
 import os
 import requests
 
@@ -7,7 +7,6 @@ API_TOKEN = os.getenv("HF_TOKEN")
 os.environ['HF_TOKEN']= os.getenv("HF_TOKEN")
 
 # Define headers with your API token
-API_TOKEN = "your_huggingface_token_here"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 # Input data for summarization
