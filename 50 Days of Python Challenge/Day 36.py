@@ -9,3 +9,18 @@ def count(input_string):
     return counter.items()
 
 print(count("hello"))
+
+def count(a):
+    dictionary = {}
+    for i in range(len(a)):
+        x = a[i]
+        count = 0
+        for j in range(i, len(a)):
+            if a[j] == a[i]:
+                count = count + 1
+        countz = dict({x: count})
+        # updating the dictionary
+        if x not in dictionary.keys():
+            dictionary.update(countz)
+    return dictionary
+print(count('hello'))
