@@ -1,12 +1,12 @@
 from collections import defaultdict
 
 def count(input_string):
-    counter = defaultdict(int)
+    counter = defaultdict(int) # Create a simple dictionary
     
     for char in input_string:
         counter[char] += 1
         
-    return counter.items()
+    return counter.items() # Items returns both key and value pairs
 
 print(count("hello"))
 
