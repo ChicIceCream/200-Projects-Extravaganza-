@@ -130,7 +130,7 @@ class GestureObjectRecognition:
         
         # Status text
         cv2.putText(frame, "Status:", (20, 30), 
-                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
         
         if self.inference_active:
             status = "PROCESSING..."
@@ -140,7 +140,7 @@ class GestureObjectRecognition:
             color = (0, 255, 0)    # Green
             
         cv2.putText(frame, status, (20, 60), 
-                   cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2)
         
         # Add cooldown indicator
         cooldown_remaining = max(0, 2 - (time.time() - self.last_inference_time))
