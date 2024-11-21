@@ -15,7 +15,6 @@ b = 0
 learning_rate = 0.01
 epochs = 6000
 
-
 def predict(i):
     return w * i + b
 
