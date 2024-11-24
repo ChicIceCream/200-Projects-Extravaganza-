@@ -8,7 +8,7 @@ class HandDetector:
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands(
             static_image_mode=False,  # Set to False for video processing
-            max_num_hands=1,          # We'll track only one hand for this example
+            max_num_hands=2,          # We'll track only one hand for this example
             min_detection_confidence=detection_confidence
         )
         self.mp_draw = mp.solutions.drawing_utils
@@ -102,11 +102,11 @@ def main():
         landmark_list = detector.find_position(img)
         
         if landmark_list:
-            # Find distance between index (8) and middle (12) fingers
+            # Find distance between index (8) and thumv (4)
             distance = detector.find_distance(4, 8, img)
             
             if distance and distance < 50:  # If fingers are close together
-                cursor = landmark_list[8]  # Use index finger tip as cursor
+                cursor = landmark_list[3]  # Use thumb tip as cursor
                 # Update all rectangles
                 for rect in rect_list:
                     rect.update(cursor)
@@ -118,28 +118,28 @@ def main():
             w, h = rect.size
             # Draw rectangle on overlay
             cv2.rectangle(overlay, 
-                         (cx - w//2, cy - h//2),
-                         (cx + w//2, cy + h//2),
-                         (0, 0, 255),
-                         cv2.FILLED)
+                        (cx - w//2, cy - h//2),
+                        (cx + w//2, cy + h//2),
+                        (0, 0, 255),
+                        cv2.FILLED)
             # Draw corner rectangles
             thickness = 20
             corner_size = 40
             # Top left
             cv2.rectangle(overlay, 
-                         (cx - w//2, cy - h//2),
-                         (cx - w//2 + corner_size, cy - h//2 + thickness),
-                         (0, 0, 255),
-                         cv2.FILLED)
+                            (cx - w//2, cy - h//2),
+                            (cx - w//2 + corner_size, cy - h//2 + thickness),
+                            (0, 0, 255),
+                            cv2.FILLED)
             cv2.rectangle(overlay,
-                         (cx - w//2, cy - h//2),
-                         (cx - w//2 + thickness, cy - h//2 + corner_size),
-                         (0, 0, 255),
-                         cv2.FILLED)
+                            (cx - w//2, cy - h//2),
+                            (cx - w//2 + thickness, cy - h//2 + corner_size),
+                            (0, 0, 255),
+                            cv2.FILLED)
             # Similar rectangles for other corners...
         
         # Blend overlay with original image
-        alpha = 0.5
+        alpha = 0.2
         mask = overlay.astype(bool)
         img[mask] = cv2.addWeighted(img, alpha, overlay, 1 - alpha, 0)[mask]
         
