@@ -22,5 +22,5 @@ def rename_files_in_folder(folder_path):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-folder_path = "C:\\Users\\User\\Desktop\\SIH DATASET\\Sat"  # Replace with your choice ot folder path
+folder_path = "C:\\Users\\User\\Desktop\\SIH DATASET\\Armaan\\satellite"  # Replace with your choice of folder path
 rename_files_in_folder(folder_path)
