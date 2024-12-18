@@ -8,7 +8,7 @@ class HandDetector:
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands(
             static_image_mode=False,  # Set to False for video processing
-            max_num_hands=2,          # We'll track only one hand for this example
+            max_num_hands=2,         
             min_detection_confidence=detection_confidence
         )
         self.mp_draw = mp.solutions.drawing_utils
