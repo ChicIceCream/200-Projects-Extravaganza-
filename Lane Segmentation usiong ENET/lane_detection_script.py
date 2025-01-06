@@ -141,6 +141,6 @@ enet_model = ENet(2, 4)  # (2,8) for enet_now_model
 enet_model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu'),weights_only=False))
 enet_model.eval()
 
-input_video_path = "outout,mp4      "
-output_video_path = 'lane_vid_sahil_bhaiya_output1.avi'
+input_video_path = "lane_vid"
+output_video_path = 'lane_vid_output.avi'
 process_and_save_video(input_video_path, output_video_path)
