@@ -21,7 +21,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 docs_processed = text_splitter.split_documents(source_docs)
 
 
-from smolagents import Tool
+from smolagents import Tool, HfApiModel, CodeAgent 
 
 class RetrieverTool(Tool):
     name = "retriever"
@@ -55,10 +55,9 @@ class RetrieverTool(Tool):
 
 retriever_tool = RetrieverTool(docs_processed)
 
-from smolagents import HfApiModel, CodeAgent
 
 agent = CodeAgent(
-    tools=[retriever_tool], model=HfApiModel("meta-llama/Llama-3.3-70B-Instruct"), max_steps=4, verbose=True
+    tools=[retriever_tool], model=HfApiModel("meta-llama/Llama-3.2-3B-Instruct"), max_steps=4,
 )
 
 agent_output = agent.run("For a transformers model training, which is slower, the forward or the backward pass?")
