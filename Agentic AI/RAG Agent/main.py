@@ -60,7 +60,7 @@ agent = CodeAgent(
     tools=[retriever_tool], model=HfApiModel("meta-llama/Llama-3.2-3B-Instruct"), max_steps=4,
 )
 
-agent_output = agent.run("For a transformers model training, which is slower, the forward or the backward pass?")
+agent_output = agent.run("For a transformers model training, which is slower, the backward or the forward pass?")
 
 print("Final output:")
 print(agent_output)
