@@ -44,7 +44,7 @@ financial_agent = Agent(
 # )
 
 multi_ai_agent=Agent(
-    team=[web_search_agent,financial_agent],
+    team=[web_search_agent, financial_agent],
     model=Groq(id=model),
     instructions=["Always include sources", "Use tables to display data"],
     show_tool_calls=True,
