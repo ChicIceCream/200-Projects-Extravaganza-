@@ -24,5 +24,5 @@ web_search_agent = Agent(
 # print(run.content)
 
 # Print the response in the terminal
-web_search_agent.print_response("Share a 2 sentence horror story.")
+web_search_agent.print_response("What paper is the most influential paper in the AI space till today?")
 
