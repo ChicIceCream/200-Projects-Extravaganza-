@@ -1,11 +1,14 @@
+from dotenv import load_dotenv
+load_dotenv(override=True)
+
 import streamlit as st
 import requests
 import google.generativeai as genai
 import os
 
 # Configure Gemini API (Replace with your actual API key)
-genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
-model = genai.GenerativeModel('gemini-pro')
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 def fetch_github_repos(username):
     """Fetch GitHub user's repositories."""
@@ -35,7 +38,13 @@ def generate_roast(repo_details):
     prompt = f"""Generate a humorous roast based on this GitHub profile summary:
     {repo_summary}
     
-    Roast the developer's coding skills, project choices, and GitHub activity with witty sarcasm."""
+    Roast the developer's coding skills, project choices, and GitHub activity with witty sarcasm.
+    
+    Do remember to keep it pretty short. Try to keep it under 3 paragraphs with 3 lines per paragraph. 
+    
+    Also, go HAM! Try to be really harsh so it actually makes someone want to start working harder and motivate them!!!
+    
+    """
     
     response = model.generate_content(prompt)
     return response.text
@@ -44,7 +53,7 @@ def main():
     st.title('🔥 GitHub Roast Generator')
     
     username = st.text_input('Enter GitHub Username')
-    
+    st.text(os.getenv("GEMINI_API_KEY"))
     if st.button('Roast Me!'):
         with st.spinner('Fetching and analyzing repositories...'):
             repos = fetch_github_repos(username)
