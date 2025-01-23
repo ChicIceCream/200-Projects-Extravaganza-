@@ -49,7 +49,7 @@ def main():
     st.title('🔥 GitHub Roast Generator')
     
     username = st.text_input('Enter GitHub Username')
-    st.text(os.getenv("GEMINI_API_KEY"))
+    
     if st.button('Roast Me!'):
         with st.spinner('Fetching and analyzing repositories...'):
             repos = fetch_github_repos(username)
