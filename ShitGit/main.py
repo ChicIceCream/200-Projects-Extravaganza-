@@ -2,10 +2,10 @@ import streamlit as st
 import requests
 import google.generativeai as genai
 
-
+# GEMINI_KEY = st.secrets.get("GEMINI_API_KEY")
 
 # Configure Gemini API (Replace with your actual API key)
-genai.configure(api_key=st.secrets("GEMINI_API_KEY"))
+genai.configure(api_key=st.secrets.get("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 def fetch_github_repos(username):
