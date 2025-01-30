@@ -3,17 +3,29 @@ import requests
 import keyboard
 import tkinter as tk
 from threading import Thread
+import json
 
-OLLAMA_URL = "http://localhost:5000/api/generate"  # Ollama API
-MODEL_NAME = "deepseek-r1:8b"  # Change this to your model
+OLLAMA_URL = "http://localhost:11435/api/generate"  # Ollama API
+MODEL_NAME = "mistral:7b-instruct-v0.2-q4_K_S"  # Change this to your model
 
 def query_ollama(prompt):
     """Sends prompt to Ollama and gets the response."""
     try:
-        response = requests.post(OLLAMA_URL, json={"model": MODEL_NAME, "prompt": prompt})
-        return response.json().get("response", "No response received.")
+        response = requests.post(OLLAMA_URL, json={"model": MODEL_NAME, "prompt": f"I need help understanding this : {prompt}. Keep the explanation very short." }, stream=True)
+        
+        result = ""
+        for line in response.iter_lines():
+            if line:
+                try:
+                    data = json.loads(line.decode('utf-8'))
+                    result += data.get("response", "")
+                except json.JSONDecodeError:
+                    continue  # Ignore malformed lines
+        
+        return result if result else "No response received."
     except Exception as e:
         return f"Error: {e}"
+
 
 def show_response(text):
     """Displays response in a new window."""
