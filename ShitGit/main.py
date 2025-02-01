@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-import google.generativeai as genai
+import google.generativeai as genai 
 
 # GEMINI_KEY = st.secrets.get("GEMINI_API_KEY") # for local host
 
