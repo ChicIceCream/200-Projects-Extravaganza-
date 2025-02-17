@@ -49,8 +49,8 @@ def process_selection():
     # Show result in a separate thread (so it doesn't block)
     Thread(target=show_response, args=(response,), daemon=True).start()
 
-# Set global shortcut (change as needed)
+# Set global shortcut 
 keyboard.add_hotkey("ctrl+shift+e", process_selection)
 
 print("Press Ctrl+Shift+E to send selected text to Ollama.")
-keyboard.wait()  # Keep script running
+keyboard.wait() 
