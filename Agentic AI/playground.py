@@ -29,5 +29,3 @@ finance_agent = Agent(
 
 app = Playground(agents=[finance_agent, web_agent]).get_app()
 
-if __name__ == "__main__":
-    serve_playground_app("playground:app", reload=True)
