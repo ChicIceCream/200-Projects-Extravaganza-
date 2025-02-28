@@ -1,0 +1,884 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
+        "documentation": {}
+    },
+    {
+        "label": "TextBlob",
+        "importPath": "textblob",
+        "description": "textblob",
+        "isExtraImport": true,
+        "detail": "textblob",
+        "documentation": {}
+    },
+    {
+        "label": "divide_square",
+        "kind": 2,
+        "importPath": "Day 1",
+        "description": "Day 1",
+        "peekOfCode": "def divide_square(num):\n    \"\"\"Gives the root of number is divisible by 5, else gives its remainder\"\"\"\n    if num % 5 == 0:\n        # ** is used to check for root\n        return f'{num ** 0.5:.2f}' # .2f specifies to give hte answer in 2 decimal places\n    else:\n        return f'{num % 5}'\n# Get the input from the user, and remember to change it to an integer\nnumber = int(input(\"Give me a number : \"))\nprint(divide_square(number))",
+        "detail": "Day 1",
+        "documentation": {}
+    },
+    {
+        "label": "number",
+        "kind": 5,
+        "importPath": "Day 1",
+        "description": "Day 1",
+        "peekOfCode": "number = int(input(\"Give me a number : \"))\nprint(divide_square(number))",
+        "detail": "Day 1",
+        "documentation": {}
+    },
+    {
+        "label": "hide_password",
+        "kind": 2,
+        "importPath": "Day 10",
+        "description": "Day 10",
+        "peekOfCode": "def hide_password():\n    actual_password = input(\"Give me your password : \")\n    return f' Your password is : {\"*\" * (len(actual_password) - 1)} and it is {(len(actual_password) - 1)} characters long'\nprint(hide_password())",
+        "detail": "Day 10",
+        "documentation": {}
+    },
+    {
+        "label": "equal_strings",
+        "kind": 2,
+        "importPath": "Day 11",
+        "description": "Day 11",
+        "peekOfCode": "def equal_strings(str1, str2):\n    if len(str1) != len(str2): \n        return False    \n    return sorted(str1) == sorted(str2)\nstr1 = 'haha'\nstr2 = 'haha'\nprint(equal_strings(str1, str2))",
+        "detail": "Day 11",
+        "documentation": {}
+    },
+    {
+        "label": "str1",
+        "kind": 5,
+        "importPath": "Day 11",
+        "description": "Day 11",
+        "peekOfCode": "str1 = 'haha'\nstr2 = 'haha'\nprint(equal_strings(str1, str2))",
+        "detail": "Day 11",
+        "documentation": {}
+    },
+    {
+        "label": "str2",
+        "kind": 5,
+        "importPath": "Day 11",
+        "description": "Day 11",
+        "peekOfCode": "str2 = 'haha'\nprint(equal_strings(str1, str2))",
+        "detail": "Day 11",
+        "documentation": {}
+    },
+    {
+        "label": "count_dots",
+        "kind": 2,
+        "importPath": "Day 12",
+        "description": "Day 12",
+        "peekOfCode": "def count_dots(string):\n    dot_count = 0\n    for char in string:\n        if char == '.':\n            dot_count += 1\n    return dot_count\nprint(count_dots(\"h.a.h.a.\"))",
+        "detail": "Day 12",
+        "documentation": {}
+    },
+    {
+        "label": "your_vat",
+        "kind": 2,
+        "importPath": "Day 13",
+        "description": "Day 13",
+        "peekOfCode": "def your_vat():\n    '''\n    This function will convert our price and VAT into the final price\n    and will also check if the inout is correct\n    '''\n    while True:\n        # We will use a try and except case to make sure the right value is input\n        try:\n            value = int(input(\"Give me the price : \"))\n            try:",
+        "detail": "Day 13",
+        "documentation": {}
+    },
+    {
+        "label": "flat_list",
+        "kind": 2,
+        "importPath": "Day 14",
+        "description": "Day 14",
+        "peekOfCode": "def flat_list(nested_list):\n    final_list = []\n    for list in nested_list:\n        final_list.extend(list)\n    return final_list\nprint(flat_list([[2,4,5,6],[3,5,8,76]]))",
+        "detail": "Day 14",
+        "documentation": {}
+    },
+    {
+        "label": "same_in_reverse",
+        "kind": 2,
+        "importPath": "Day 15",
+        "description": "Day 15",
+        "peekOfCode": "def same_in_reverse(string):\n    reversed_str = string[::-1]\n    # print(reversed_str, string)\n    return reversed_str == string\nprint(same_in_reverse(\"dad\"))",
+        "detail": "Day 15",
+        "documentation": {}
+    },
+    {
+        "label": "sum_list",
+        "kind": 2,
+        "importPath": "Day 16",
+        "description": "Day 16",
+        "peekOfCode": "def sum_list(num_list):\n    final_list = []\n    for num in num_list:\n        for a in num:\n            final_list.append(a)\n    # total = 0\n    # for num in final_list:\n    #     total += num\n    # return total\n    return final_list",
+        "detail": "Day 16",
+        "documentation": {}
+    },
+    {
+        "label": "num_list",
+        "kind": 5,
+        "importPath": "Day 16",
+        "description": "Day 16",
+        "peekOfCode": "num_list = [[2, 4, 5, 6], [2, 3, 5, 6]]\nprint(sum_list(num_list))",
+        "detail": "Day 16",
+        "documentation": {}
+    },
+    {
+        "label": "user_name",
+        "kind": 2,
+        "importPath": "Day 17",
+        "description": "Day 17",
+        "peekOfCode": "def user_name():\n    username = input(\"Please input your username : \")\n    reversed_username = username[::-1]\n    return (reversed_username + str(random.randint(0, 9)))\nprint(user_name())",
+        "detail": "Day 17",
+        "documentation": {}
+    },
+    {
+        "label": "any_number",
+        "kind": 2,
+        "importPath": "Day 18",
+        "description": "Day 18",
+        "peekOfCode": "def any_number(*args):\n    total = 0\n    num_of_args = 0\n    for arg in args:\n        total += arg\n        num_of_args += 1\n    return total / num_of_args\nprint(any_number(11,90))\n'''\nI learned something new today! it is about the \"*args\". ",
+        "detail": "Day 18",
+        "documentation": {}
+    },
+    {
+        "label": "count_words",
+        "kind": 2,
+        "importPath": "Day 19",
+        "description": "Day 19",
+        "peekOfCode": "def count_words(string):\n    words = string.split()\n    return len(words)\ndef trial(string):\n    words = string.replace(\" \", \",\")\n    return words\ndef count_elements(string):\n    words = string.split()\n    characters = 0\n    for letters in words:",
+        "detail": "Day 19",
+        "documentation": {}
+    },
+    {
+        "label": "trial",
+        "kind": 2,
+        "importPath": "Day 19",
+        "description": "Day 19",
+        "peekOfCode": "def trial(string):\n    words = string.replace(\" \", \",\")\n    return words\ndef count_elements(string):\n    words = string.split()\n    characters = 0\n    for letters in words:\n        characters += len(letters)\n    return characters\nsentence = f\"I love learning\"",
+        "detail": "Day 19",
+        "documentation": {}
+    },
+    {
+        "label": "count_elements",
+        "kind": 2,
+        "importPath": "Day 19",
+        "description": "Day 19",
+        "peekOfCode": "def count_elements(string):\n    words = string.split()\n    characters = 0\n    for letters in words:\n        characters += len(letters)\n    return characters\nsentence = f\"I love learning\"\n# print(f\"Number of words: {count_words(sentence)}\")  # Output: 3\n# print(f\"Number of elements: {count_elements(sentence)}\")  # Output: 13\\\nprint(trial(\"sentence\"))",
+        "detail": "Day 19",
+        "documentation": {}
+    },
+    {
+        "label": "sentence",
+        "kind": 5,
+        "importPath": "Day 19",
+        "description": "Day 19",
+        "peekOfCode": "sentence = f\"I love learning\"\n# print(f\"Number of words: {count_words(sentence)}\")  # Output: 3\n# print(f\"Number of elements: {count_elements(sentence)}\")  # Output: 13\\\nprint(trial(\"sentence\"))",
+        "detail": "Day 19",
+        "documentation": {}
+    },
+    {
+        "label": "convert_add",
+        "kind": 2,
+        "importPath": "Day 2",
+        "description": "Day 2",
+        "peekOfCode": "def convert_add(str_list):\n    # This will convert every number that is a string to an integer\n    int_list = [int(num) for num in str_list]\n    # Another way to do this is using the map() function\n    # int_list =  list(map(int, list))\n    total = 0  # Initialize total outside of the loop\n    for i in int_list:\n        total += i  # Use the += operator to increment total\n    # Another very easy way to get the total is to use the sum() function\n    # total = sum(int_list)",
+        "detail": "Day 2",
+        "documentation": {}
+    },
+    {
+        "label": "string_list",
+        "kind": 5,
+        "importPath": "Day 2",
+        "description": "Day 2",
+        "peekOfCode": "string_list = ['1', '3', '5']\nprint(convert_add(string_list))",
+        "detail": "Day 2",
+        "documentation": {}
+    },
+    {
+        "label": "capitalize",
+        "kind": 2,
+        "importPath": "Day 20",
+        "description": "Day 20",
+        "peekOfCode": "def capitalize(string):\n    new_string = string.split()\n    list(new_string)\n    for i in range(len(new_string)):\n        new_string[i] = new_string[i][0].upper() + new_string[i][1:]\n    capitalized_string = ' '.join(new_string)\n    return capitalized_string\nprint(capitalize(\"Today is good day\"))",
+        "detail": "Day 20",
+        "documentation": {}
+    },
+    {
+        "label": "make_tuples",
+        "kind": 2,
+        "importPath": "Day 21",
+        "description": "Day 21",
+        "peekOfCode": "def make_tuples(list1, list2):\n    if len(list1) != len(list2):\n        return False\n    final_list = tuple(zip(list1, list2))\n    return final_list\nprint(make_tuples([1,2,3,4], [5,6,7,8]))",
+        "detail": "Day 21",
+        "documentation": {}
+    },
+    {
+        "label": "add_hash",
+        "kind": 2,
+        "importPath": "Day 22",
+        "description": "Day 22",
+        "peekOfCode": "def add_hash(string):\n    words = string.split()\n    hashed_string = \"#\".join(words)\n    return hashed_string\ndef add_underscore(string):\n    return string.replace('#','_')\ndef remove_underscore(string):\n    return string.replace('_', ' ')\nprint(remove_underscore(add_underscore(add_hash('Python'))))",
+        "detail": "Day 22",
+        "documentation": {}
+    },
+    {
+        "label": "add_underscore",
+        "kind": 2,
+        "importPath": "Day 22",
+        "description": "Day 22",
+        "peekOfCode": "def add_underscore(string):\n    return string.replace('#','_')\ndef remove_underscore(string):\n    return string.replace('_', ' ')\nprint(remove_underscore(add_underscore(add_hash('Python'))))",
+        "detail": "Day 22",
+        "documentation": {}
+    },
+    {
+        "label": "remove_underscore",
+        "kind": 2,
+        "importPath": "Day 22",
+        "description": "Day 22",
+        "peekOfCode": "def remove_underscore(string):\n    return string.replace('_', ' ')\nprint(remove_underscore(add_underscore(add_hash('Python'))))",
+        "detail": "Day 22",
+        "documentation": {}
+    },
+    {
+        "label": "addition",
+        "kind": 2,
+        "importPath": "Day 23",
+        "description": "Day 23",
+        "peekOfCode": "def addition(a, b):\n    try: \n        return a + b\n    except (TypeError, ValueError):\n        return \"Please enter valid numeric values\"\ndef subtract(a, b):\n    try: \n        return a - b\n    except (TypeError, ValueError):\n        return \"Please enter valid numeric values\"",
+        "detail": "Day 23",
+        "documentation": {}
+    },
+    {
+        "label": "subtract",
+        "kind": 2,
+        "importPath": "Day 23",
+        "description": "Day 23",
+        "peekOfCode": "def subtract(a, b):\n    try: \n        return a - b\n    except (TypeError, ValueError):\n        return \"Please enter valid numeric values\"\ndef multiply(a, b):\n    try: \n        return a * b\n    except (TypeError, ValueError):\n        return \"Please enter valid numeric values\"",
+        "detail": "Day 23",
+        "documentation": {}
+    },
+    {
+        "label": "multiply",
+        "kind": 2,
+        "importPath": "Day 23",
+        "description": "Day 23",
+        "peekOfCode": "def multiply(a, b):\n    try: \n        return a * b\n    except (TypeError, ValueError):\n        return \"Please enter valid numeric values\"\ndef division(a, b):\n    try:\n        if b == 0:\n            raise ZeroDivisionError\n        return a / b",
+        "detail": "Day 23",
+        "documentation": {}
+    },
+    {
+        "label": "division",
+        "kind": 2,
+        "importPath": "Day 23",
+        "description": "Day 23",
+        "peekOfCode": "def division(a, b):\n    try:\n        if b == 0:\n            raise ZeroDivisionError\n        return a / b\n    except (ZeroDivisionError, TypeError, ValueError):\n        return \"Invalid operation: division by zero or non-numeric input\"\ndef calculator():\n    operation = input(\"Enter operation (+, -, *, /): \")\n    while True:",
+        "detail": "Day 23",
+        "documentation": {}
+    },
+    {
+        "label": "calculator",
+        "kind": 2,
+        "importPath": "Day 23",
+        "description": "Day 23",
+        "peekOfCode": "def calculator():\n    operation = input(\"Enter operation (+, -, *, /): \")\n    while True:\n        try:\n            num1 = float(input(\"Enter first number: \"))\n            num2 = float(input(\"Enter second number: \"))\n            if operation == '+':\n                result = addition(num1, num2)\n            elif operation == '-':\n                result = subtract(num1, num2)",
+        "detail": "Day 23",
+        "documentation": {}
+    },
+    {
+        "label": "average_calories",
+        "kind": 2,
+        "importPath": "Day 24",
+        "description": "Day 24",
+        "peekOfCode": "def average_calories():\n    calories_total = int(input(\"Enter the anount of total calories you have taken?: \"))\n    days = int(input(\"How many days were total?:  \"))\n    return f'The amount of average calories taken is : {int(calories_total / days)}'\nprint(average_calories())",
+        "detail": "Day 24",
+        "documentation": {}
+    },
+    {
+        "label": "all_the_same",
+        "kind": 2,
+        "importPath": "Day 25",
+        "description": "Day 25",
+        "peekOfCode": "def all_the_same(list):\n    hashmap = defaultdict(int)\n    for word in list:\n        hashmap[word] += 1\n    if len(hashmap.values()) > 1:\n        return False\n    return len(list) == len(hashmap.values())\nprint(all_the_same(['Mary', 'Mary', 'Mary']))\n# def all_the_same(data:str or list or tuple):\n#     neel2 = defaultdict(int)",
+        "detail": "Day 25",
+        "documentation": {}
+    },
+    {
+        "label": "sort_words",
+        "kind": 2,
+        "importPath": "Day 26",
+        "description": "Day 26",
+        "peekOfCode": "def sort_words(string):\n    hashmap = defaultdict(int)\n    words = ''.join(string.split())\n    for letter in words:\n        hashmap[letter] += 1\n    letters = []\n    for x, count in hashmap.items():\n        if count >= 1:\n            letters.append(x)\n    return sorted(letters)",
+        "detail": "Day 26",
+        "documentation": {}
+    },
+    {
+        "label": "unique_numbers",
+        "kind": 2,
+        "importPath": "Day 27",
+        "description": "Day 27",
+        "peekOfCode": "def unique_numbers(numbers):\n    hashmap = defaultdict(int)\n    for num in numbers:\n        hashmap[num] += 1\n    unique_list = []\n    for num in hashmap:\n        unique_list.append(num)\n    # print(unique_list)\n    # print(numbers)\n    if (sum(numbers) - sum(unique_list)) % 2 == 0:",
+        "detail": "Day 27",
+        "documentation": {}
+    },
+    {
+        "label": "index_position",
+        "kind": 2,
+        "importPath": "Day 28",
+        "description": "Day 28",
+        "peekOfCode": "def index_position(string):\n    index = []\n    for i, letter in enumerate(string):\n        if letter.lower() == letter:\n            index.append(i)\n    return index\nprint(index_position(\"LovE\"))",
+        "detail": "Day 28",
+        "documentation": {}
+    },
+    {
+        "label": "middle_figure",
+        "kind": 2,
+        "importPath": "Day 29",
+        "description": "Day 29",
+        "peekOfCode": "def middle_figure(a, b):\n    combined_string = a + b\n    middle_index = len(combined_string) // 2\n    middle_character = combined_string[middle_index]\n    return middle_character\nprint(middle_figure(\"make love\", \"not war\"))",
+        "detail": "Day 29",
+        "documentation": {}
+    },
+    {
+        "label": "register_check",
+        "kind": 2,
+        "importPath": "Day 3",
+        "description": "Day 3",
+        "peekOfCode": "def register_check(register):\n    counter = 0\n    for key in register:\n        if register[key] == 'yes':\n            counter += 1\n    return counter\nregister = {\n    'Michael':'yes','John': 'no',\n    'Peter':'yes', 'Mary': 'yes'\n            }",
+        "detail": "Day 3",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "Day 3",
+        "description": "Day 3",
+        "peekOfCode": "register = {\n    'Michael':'yes','John': 'no',\n    'Peter':'yes', 'Mary': 'yes'\n            }\nprint(f'The amount of students present are : {register_check(register)}')",
+        "detail": "Day 3",
+        "documentation": {}
+    },
+    {
+        "label": "repeated_name",
+        "kind": 2,
+        "importPath": "Day 30",
+        "description": "Day 30",
+        "peekOfCode": "def repeated_name(list_of_names):\n    hashmap = defaultdict(int)\n    for name in list_of_names:\n        hashmap[name] += 1\n    most_repeated_name = max(hashmap, key=hashmap.get)\n    return most_repeated_name\nprint(repeated_name([\"John\", \"Peter\", \"John\", \"Peter\", \"Jones\", \"Peter\"]))",
+        "detail": "Day 30",
+        "documentation": {}
+    },
+    {
+        "label": "longest_word",
+        "kind": 2,
+        "importPath": "Day 31",
+        "description": "Day 31",
+        "peekOfCode": "def longest_word(array):\n    hashmap = defaultdict(int)\n    for word in array:\n        hashmap[word] = len(word)\n    longest = max(hashmap, key=hashmap.get)\n    return hashmap[longest], longest\nprint(longest_word(['Java', 'JavaScript', 'Python']))\n# Another method\ndef longest_word(array):\n    if not array:  # Check if the array is empty",
+        "detail": "Day 31",
+        "documentation": {}
+    },
+    {
+        "label": "longest_word",
+        "kind": 2,
+        "importPath": "Day 31",
+        "description": "Day 31",
+        "peekOfCode": "def longest_word(array):\n    if not array:  # Check if the array is empty\n        return \"\"\n    longest = array[0]\n    for word in array:\n        if len(word) > len(longest):\n            longest = word\n    return longest, len(longest)\nprint(longest_word(['Java', 'JavaScript', 'Python']))",
+        "detail": "Day 31",
+        "documentation": {}
+    },
+    {
+        "label": "password_validator",
+        "kind": 2,
+        "importPath": "Day 32",
+        "description": "Day 32",
+        "peekOfCode": "def password_validator():\n    while True: # runs forever\n        password = input(\"Enter your password: \")\n        if len(password) < 8:  # longer than 8 letters\n            print(\"Password should be at least 8 letters long\")\n        elif not any(c.isupper() for c in password):  # upper case letter\n            print(\"Password should contain at least one uppercase letter\")\n        elif not any(c.islower() for c in password):  # lower case letter\n            print(\"Password should contain at least one lowercase letter\")\n        elif not any(c.isdigit() for c in password):  # at least one digit",
+        "detail": "Day 32",
+        "documentation": {}
+    },
+    {
+        "label": "inter_section",
+        "kind": 2,
+        "importPath": "Day 33",
+        "description": "Day 33",
+        "peekOfCode": "def inter_section(list1, list2):\n    result = []\n    for num in list1:\n        for number in list2:\n            if num == number:\n                result.append(num)\n    return tuple(result)\ndef inter_section(a, b):\n    return tuple(i for i in a if i in b)\nprint(inter_section([20, 30, 60, 65, 75, 80, 85], [42, 30, 80, 65, 68, 88, 95]))",
+        "detail": "Day 33",
+        "documentation": {}
+    },
+    {
+        "label": "inter_section",
+        "kind": 2,
+        "importPath": "Day 33",
+        "description": "Day 33",
+        "peekOfCode": "def inter_section(a, b):\n    return tuple(i for i in a if i in b)\nprint(inter_section([20, 30, 60, 65, 75, 80, 85], [42, 30, 80, 65, 68, 88, 95]))",
+        "detail": "Day 33",
+        "documentation": {}
+    },
+    {
+        "label": "just_digits",
+        "kind": 2,
+        "importPath": "Day 34",
+        "description": "Day 34",
+        "peekOfCode": "def just_digits():\n    with open('50 Days of Python Challenge\\Components\\python.csv', 'r', encoding='utf-8') as file:\n        a = file.read().split()\n        result = []\n        for word in a:\n            if word.isdigit():\n                result.append(word)\n    return result\nprint(just_digits())",
+        "detail": "Day 34",
+        "documentation": {}
+    },
+    {
+        "label": "check_pangram",
+        "kind": 2,
+        "importPath": "Day 35",
+        "description": "Day 35",
+        "peekOfCode": "def check_pangram(input_string):\n    counter = defaultdict(int) # Make a dictionary that counts \n    stripped_string = \"\".join(input_string.split()) # To remove all the white spaces\n    for char in stripped_string.lower(): # Make it all lowercase so it takes in capital and lower as same character\n        counter[char] += 1\n    # If the number of keys are 26 then that means there are 26 alphabets\n    if len(counter.keys()) == 26:\n        # print(counter.keys()) # checking \n        return True\n    else:",
+        "detail": "Day 35",
+        "documentation": {}
+    },
+    {
+        "label": "count",
+        "kind": 2,
+        "importPath": "Day 36",
+        "description": "Day 36",
+        "peekOfCode": "def count(input_string):\n    counter = defaultdict(int) # Create a simple dictionary\n    for char in input_string:\n        counter[char] += 1\n    return counter.items() # Items returns both key and value pairs\nprint(count(\"hello\"))\ndef count(a):\n    dictionary = {}\n    for i in range(len(a)):\n        x = a[i]",
+        "detail": "Day 36",
+        "documentation": {}
+    },
+    {
+        "label": "count",
+        "kind": 2,
+        "importPath": "Day 36",
+        "description": "Day 36",
+        "peekOfCode": "def count(a):\n    dictionary = {}\n    for i in range(len(a)):\n        x = a[i]\n        count = 0\n        for j in range(i, len(a)):\n            if a[j] == a[i]:\n                count = count + 1\n        countz = dict({x: count})\n        # updating the dictionary",
+        "detail": "Day 36",
+        "documentation": {}
+    },
+    {
+        "label": "count_the_vowels",
+        "kind": 2,
+        "importPath": "Day 37",
+        "description": "Day 37",
+        "peekOfCode": "def count_the_vowels(input_string):\n    counter = defaultdict(int) # make a defaultdict for counter\n    vowels = [\"a\", \"e\", \"i\", \"o\", \"u\"] # make a list to check if the characters is one of thw vowel\n    for char in input_string.lower(): # to make sure it only counts the vowel once \n        if char in vowels:    # only include the character if it is a vowel\n            counter[char] += 1\n    return len(counter.keys())    # will return the length of the keys\nprint(count_the_vowels(\"hello\"))",
+        "detail": "Day 37",
+        "documentation": {}
+    },
+    {
+        "label": "guess_a_number",
+        "kind": 2,
+        "importPath": "Day 38",
+        "description": "Day 38",
+        "peekOfCode": "def guess_a_number():\n    number_to_guess = random.randint(0, 10)\n    print(\"Welcome to Number Guessing!\")\n    time.sleep(1)\n    while True: # repeats forever until the condition is not true \n        number_guessed = int(input(\"Guess a number between 0 to 10 : \"))\n        if number_guessed > number_to_guess:\n            print(\"Guess is too high! Try again!\")\n        elif number_guessed < number_to_guess:\n            print(\"Guess is too low! Try Again!\")",
+        "detail": "Day 38",
+        "documentation": {}
+    },
+    {
+        "label": "generate_password",
+        "kind": 2,
+        "importPath": "Day 39",
+        "description": "Day 39",
+        "peekOfCode": "def generate_password():\n    password = [] # make an empty list to store the password at the end\n    while True: # loops forever until the right answer is given\n        password_security = input('''Choose Your Security Level :\n                1 -> Low Security \n                2 -> Strong Security\n                3 -> Very Strong Security\n        :''')\n        if password_security == \"1\":\n            length = 5",
+        "detail": "Day 39",
+        "documentation": {}
+    },
+    {
+        "label": "only_floats",
+        "kind": 2,
+        "importPath": "Day 4",
+        "description": "Day 4",
+        "peekOfCode": "def only_floats(a, b):\n    count = 0\n    if type(a) == float:\n        count += 1\n    if type(b) == float:\n        count += 1\n    return count",
+        "detail": "Day 4",
+        "documentation": {}
+    },
+    {
+        "label": "translate",
+        "kind": 2,
+        "importPath": "Day 40",
+        "description": "Day 40",
+        "peekOfCode": "def translate(input_string):\n    final = []\n    vowels = [\"a\", \"e\", \"i\", \"o\", \"u\"] # added vowels to check if the word has vowels in it\n    for word in list(input_string.split()): # split so every word is individual and list so we can iterate over the word\n        if word[0] in vowels: # if the first letter has a vowel\n            final.append(word + \"yay\")\n        else: # if it doesnt\n            # iterates over the whole word after the first letter, adds the first letter and adds \"ay\" at the end\n            final.append(word[1:] + word[0] + \"ay\") \n    return \" \".join(final) # join because the whole final variable is a list, not a sentence",
+        "detail": "Day 40",
+        "documentation": {}
+    },
+    {
+        "label": "words_with_vowels",
+        "kind": 2,
+        "importPath": "Day 41",
+        "description": "Day 41",
+        "peekOfCode": "def words_with_vowels(input_string):\n    final = []\n    vowels = [\"a\", \"e\", \"i\", \"o\", \"u\"] # make a vowel lsit to check if it exists in the word\n    for word in list(input_string.split()): # list so we can iterate over every word\n        for letter in word:\n            if letter in vowels: # double for loop to check in letters\n                final.append(word)\n                break # break so it doesnt repeat for every vowel in the word \n    return final\nprint(words_with_vowels(\"You have no rhythm\"))",
+        "detail": "Day 41",
+        "documentation": {}
+    },
+    {
+        "label": "spelling_checker",
+        "kind": 2,
+        "importPath": "Day 42",
+        "description": "Day 42",
+        "peekOfCode": "def spelling_checker():\n    \"\"\"\n    A function to check and correct spelling using the TextBlob module.\n    \"\"\"\n    while True:\n        # Ask the user to input a word\n        word = input(\"Please enter a word: \").strip()\n        # Check the spelling\n        corrected_word = str(TextBlob(word).correct())\n        if word.lower() == corrected_word.lower():",
+        "detail": "Day 42",
+        "documentation": {}
+    },
+    {
+        "label": "my_discount",
+        "kind": 2,
+        "importPath": "Day 5",
+        "description": "Day 5",
+        "peekOfCode": "def my_discount():\n    discount_price = price * (discount / 100)\n    return price - discount_price\nprice = int(input(\"Give me the price : \"))\ndiscount = int(input(\"Give me the discount : \"))\nprint(f' The final price is : {my_discount()}')",
+        "detail": "Day 5",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "Day 5",
+        "description": "Day 5",
+        "peekOfCode": "price = int(input(\"Give me the price : \"))\ndiscount = int(input(\"Give me the discount : \"))\nprint(f' The final price is : {my_discount()}')",
+        "detail": "Day 5",
+        "documentation": {}
+    },
+    {
+        "label": "discount",
+        "kind": 5,
+        "importPath": "Day 5",
+        "description": "Day 5",
+        "peekOfCode": "discount = int(input(\"Give me the discount : \"))\nprint(f' The final price is : {my_discount()}')",
+        "detail": "Day 5",
+        "documentation": {}
+    },
+    {
+        "label": "my_function",
+        "kind": 2,
+        "importPath": "Day 6",
+        "description": "Day 6",
+        "peekOfCode": "def my_function(email):\n    name = \"\"\n    for letter in email:\n        if letter != '@':\n            name += letter\n        else:\n            break\n    return name\nemail = \"ben@gmail.com\"\nprint(my_function(email))",
+        "detail": "Day 6",
+        "documentation": {}
+    },
+    {
+        "label": "email",
+        "kind": 5,
+        "importPath": "Day 6",
+        "description": "Day 6",
+        "peekOfCode": "email = \"ben@gmail.com\"\nprint(my_function(email))",
+        "detail": "Day 6",
+        "documentation": {}
+    },
+    {
+        "label": "string_range",
+        "kind": 2,
+        "importPath": "Day 7",
+        "description": "Day 7",
+        "peekOfCode": "def string_range(number):\n    string = []\n    for i in range(number):\n        string.append(str(i))\n        string.append(\".\")\n    if string[-1] == \".\":\n        string.pop()\n    return ''.join(string)\ninteger = 3\nprint(string_range(integer))",
+        "detail": "Day 7",
+        "documentation": {}
+    },
+    {
+        "label": "integer",
+        "kind": 5,
+        "importPath": "Day 7",
+        "description": "Day 7",
+        "peekOfCode": "integer = 3\nprint(string_range(integer))",
+        "detail": "Day 7",
+        "documentation": {}
+    },
+    {
+        "label": "odd_even",
+        "kind": 2,
+        "importPath": "Day 8",
+        "description": "Day 8",
+        "peekOfCode": "def odd_even(list):\n    left, right = 0, len(list) - 1\n    # print(left, right)\n    while left != right:\n        if list[right] % 2 != 0:\n            right -= 1\n            # print(right)\n        if list[left] % 2 != 1:\n            left += 1\n            # print(left)",
+        "detail": "Day 8",
+        "documentation": {}
+    },
+    {
+        "label": "odd_even2",
+        "kind": 2,
+        "importPath": "Day 8",
+        "description": "Day 8",
+        "peekOfCode": "def odd_even2(list):\n    for num in list:\n        if num % 2 == 0:\n            even = num\n    for num in list:\n        if num % 2 != 0:\n            odd = num\n            break\n    return even, odd\nprint(odd_even2(my_list))",
+        "detail": "Day 8",
+        "documentation": {}
+    },
+    {
+        "label": "my_list",
+        "kind": 5,
+        "importPath": "Day 8",
+        "description": "Day 8",
+        "peekOfCode": "my_list = [1,2,3,4,6]\ndef odd_even2(list):\n    for num in list:\n        if num % 2 == 0:\n            even = num\n    for num in list:\n        if num % 2 != 0:\n            odd = num\n            break\n    return even, odd",
+        "detail": "Day 8",
+        "documentation": {}
+    },
+    {
+        "label": "biggest_odd",
+        "kind": 2,
+        "importPath": "Day 9",
+        "description": "Day 9",
+        "peekOfCode": "def biggest_odd(list):\n    new_list = [letter for letter in list if int(letter) % 2 != 0]\n    return max(new_list)\nlist = \"23569\"\nprint(biggest_odd(list))",
+        "detail": "Day 9",
+        "documentation": {}
+    },
+    {
+        "label": "list",
+        "kind": 5,
+        "importPath": "Day 9",
+        "description": "Day 9",
+        "peekOfCode": "list = \"23569\"\nprint(biggest_odd(list))",
+        "detail": "Day 9",
+        "documentation": {}
+    },
+    {
+        "label": "your_salary",
+        "kind": 2,
+        "importPath": "Extra Challenge 2",
+        "description": "Extra Challenge 2",
+        "peekOfCode": "def your_salary():\n    teacher_name = input(\"What is the teachers name? : \")\n    periods = int(input(\"How many periods have they taught this month? : \"))\n    rate = int(input(f\"What is {teacher_name}'s rate for each period they take? : \"))\n    rate_overtime = int(input(f\"What is their rate for overtime? : \"))\n    if periods > 100:\n        salary = (100 * rate) + ((periods - 100) * rate_overtime)\n    else:\n        salary = (100 * periods)\n    salary = \"{:,.2f}\".format(salary)",
+        "detail": "Extra Challenge 2",
+        "documentation": {}
+    },
+    {
+        "label": "measure_time",
+        "kind": 2,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "def measure_time(iterable, target):\n    start_time = time.perf_counter()  # Use high-resolution timer\n    for i in iterable:\n        if num == i:\n            break\n    end_time = time.perf_counter()\n    print(f\"iteration {iterable}\")\n    return end_time - start_time\n# Run multiple trials and take the average\ntrials = 1000",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "a = range(100000)\nx = set(a)\ny = list(a)\nnum = 99999\nstart_time = time.time()\nfor i in x:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_1 = end_time - start_time",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "x = set(a)\ny = list(a)\nnum = 99999\nstart_time = time.time()\nfor i in x:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_1 = end_time - start_time\nstart_time = time.time()",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "y = list(a)\nnum = 99999\nstart_time = time.time()\nfor i in x:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_1 = end_time - start_time\nstart_time = time.time()\nfor i in y:",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "num = 99999\nstart_time = time.time()\nfor i in x:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_1 = end_time - start_time\nstart_time = time.time()\nfor i in y:\n    if num == i:",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "start_time",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "start_time = time.time()\nfor i in x:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_1 = end_time - start_time\nstart_time = time.time()\nfor i in y:\n    if num == i:\n        break",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "end_time",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "end_time = time.time()\nelapsed_time_1 = end_time - start_time\nstart_time = time.time()\nfor i in y:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_2 = end_time - start_time\n# Print the elapsed time for each search\nprint(\"Elapsed time for search 1:\", elapsed_time_1)",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "elapsed_time_1",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "elapsed_time_1 = end_time - start_time\nstart_time = time.time()\nfor i in y:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_2 = end_time - start_time\n# Print the elapsed time for each search\nprint(\"Elapsed time for search 1:\", elapsed_time_1)\nprint(\"Elapsed time for search 2:\", elapsed_time_2)",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "start_time",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "start_time = time.time()\nfor i in y:\n    if num == i:\n        break\nend_time = time.time()\nelapsed_time_2 = end_time - start_time\n# Print the elapsed time for each search\nprint(\"Elapsed time for search 1:\", elapsed_time_1)\nprint(\"Elapsed time for search 2:\", elapsed_time_2)\nimport time",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "end_time",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "end_time = time.time()\nelapsed_time_2 = end_time - start_time\n# Print the elapsed time for each search\nprint(\"Elapsed time for search 1:\", elapsed_time_1)\nprint(\"Elapsed time for search 2:\", elapsed_time_2)\nimport time\na = range(1000000)\nx = set(a)\ny = list(a)\nnum = 999999",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "elapsed_time_2",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "elapsed_time_2 = end_time - start_time\n# Print the elapsed time for each search\nprint(\"Elapsed time for search 1:\", elapsed_time_1)\nprint(\"Elapsed time for search 2:\", elapsed_time_2)\nimport time\na = range(1000000)\nx = set(a)\ny = list(a)\nnum = 999999\ndef measure_time(iterable, target):",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "a = range(1000000)\nx = set(a)\ny = list(a)\nnum = 999999\ndef measure_time(iterable, target):\n    start_time = time.perf_counter()  # Use high-resolution timer\n    for i in iterable:\n        if num == i:\n            break\n    end_time = time.perf_counter()",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "x = set(a)\ny = list(a)\nnum = 999999\ndef measure_time(iterable, target):\n    start_time = time.perf_counter()  # Use high-resolution timer\n    for i in iterable:\n        if num == i:\n            break\n    end_time = time.perf_counter()\n    print(f\"iteration {iterable}\")",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "y = list(a)\nnum = 999999\ndef measure_time(iterable, target):\n    start_time = time.perf_counter()  # Use high-resolution timer\n    for i in iterable:\n        if num == i:\n            break\n    end_time = time.perf_counter()\n    print(f\"iteration {iterable}\")\n    return end_time - start_time",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "num = 999999\ndef measure_time(iterable, target):\n    start_time = time.perf_counter()  # Use high-resolution timer\n    for i in iterable:\n        if num == i:\n            break\n    end_time = time.perf_counter()\n    print(f\"iteration {iterable}\")\n    return end_time - start_time\n# Run multiple trials and take the average",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "trials",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "trials = 1000\nelapsed_time_1 = sum(measure_time(x, num) for _ in range(trials)) / trials\nelapsed_time_2 = sum(measure_time(y, num) for _ in range(trials)) / trials\n# Print the average elapsed time for each search\nprint(\"Average elapsed time for search 1 (set):\", elapsed_time_1)\nprint(\"Average elapsed time for search 2 (list):\", elapsed_time_2)",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "elapsed_time_1",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "elapsed_time_1 = sum(measure_time(x, num) for _ in range(trials)) / trials\nelapsed_time_2 = sum(measure_time(y, num) for _ in range(trials)) / trials\n# Print the average elapsed time for each search\nprint(\"Average elapsed time for search 1 (set):\", elapsed_time_1)\nprint(\"Average elapsed time for search 2 (list):\", elapsed_time_2)",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "elapsed_time_2",
+        "kind": 5,
+        "importPath": "Extra Challenge 3",
+        "description": "Extra Challenge 3",
+        "peekOfCode": "elapsed_time_2 = sum(measure_time(y, num) for _ in range(trials)) / trials\n# Print the average elapsed time for each search\nprint(\"Average elapsed time for search 1 (set):\", elapsed_time_1)\nprint(\"Average elapsed time for search 2 (list):\", elapsed_time_2)",
+        "detail": "Extra Challenge 3",
+        "documentation": {}
+    },
+    {
+        "label": "age_in_minutes",
+        "kind": 2,
+        "importPath": "Extra Challenge",
+        "description": "Extra Challenge",
+        "peekOfCode": "def age_in_minutes():\n    while True:\n        try:\n            year = int(input(\"Give me your birth year : \"))\n            if len(str(year)) == 4 and year >= 1900 and year < 2024:\n                break\n            else:\n                print(\"Please enter a valid year\")\n        except:\n            print(\"Please give me a value of 4 numbers\")",
+        "detail": "Extra Challenge",
+        "documentation": {}
+    }
+]

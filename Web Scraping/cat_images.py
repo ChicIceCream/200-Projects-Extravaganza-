@@ -73,7 +73,6 @@ class CatImageScraper:
                     image_links.append('https://commons.wikimedia.org' + link['href'])
             
             return image_links
-            
         except Exception as e:
             self.logger.error(f"Error getting image links: {str(e)}")
             return []
