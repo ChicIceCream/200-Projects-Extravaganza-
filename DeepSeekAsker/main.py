@@ -26,7 +26,6 @@ def query_ollama(prompt):
     except Exception as e:
         return f"Error: {e}"
 
-
 def show_response(text):
     """Displays response in a new window."""
     window = tk.Tk()
