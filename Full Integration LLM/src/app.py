@@ -1,46 +1,69 @@
 import streamlit as st
+import os
+from dotenv import load_dotenv
+import google.generativeai as genai
 
-# Dummy **LLM** class for demonstration
-class DummyLLM:
+# **Load environment variables** from .env file
+load_dotenv()
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+if not GOOGLE_API_KEY:
+    st.error("**GOOGLE_API_KEY** is missing in .env file.")
+    st.stop()
+
+# **Configure Gemini**
+genai.configure(api_key=GOOGLE_API_KEY)
+
+class GeminiLLM:
     def generate_response(self, prompt):
-        return f"Response for: {prompt}"
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        
+        # calling my model
+        response = model.generate_content([prompt])
+        
+        return response.text
 
-llm = DummyLLM()
+# **Instantiate Gemini LLM**
+llm = GeminiLLM()
 
 def preprocess_text(text):
-    # **Preprocessing**: lowercasing as an example
+    # **Preprocessing**: Lowercase as an example
     return text.lower()
 
-st.title("**Arogo AI Assistant**")
+st.title("**Arogo AI Assistant with Gemini**")
 
-# Sidebar for selecting **NLP** tasks
-functionality = st.sidebar.selectbox("Choose **Functionality**", [
-    "Home", "**Summarization**", "**Sentiment Analysis**", "**NER**", "**Question Answering**"
+# **Sidebar** for selecting **NLP** tasks
+functionality = st.sidebar.selectbox("Choose Functionality", [
+    "Home", "Summarization", "Sentiment Analysis", "NER", "Question Answering"
 ])
 
 if functionality == "Home":
     st.write("Welcome to the **Arogo AI Streamlit App**. Use the sidebar to select a functionality.")
-elif functionality == "**Summarization**":
+    
+elif functionality == "Summarization":
     text_input = st.text_area("Enter text for **Summarization**:")
     if st.button("Summarize"):
-        prompt = f"Summarize: {preprocess_text(text_input)}"
+        prompt = f"Summarize the following text concisely:\n{text_input}"
         summary = llm.generate_response(prompt)
         st.write("**Summary:**", summary)
+        
 elif functionality == "**Sentiment Analysis**":
     text_input = st.text_area("Enter text for **Sentiment Analysis**:")
     if st.button("Analyze Sentiment"):
-        prompt = f"Analyze sentiment: {preprocess_text(text_input)}"
+        prompt = f"Analyze the sentiment of the following text as positive, negative, or neutral:\n{text_input}"
         sentiment = llm.generate_response(prompt)
         st.write("**Sentiment:**", sentiment)
+        
 elif functionality == "**NER**":
     text_input = st.text_area("Enter text for **Named Entity Recognition**:")
     if st.button("Extract Entities"):
-        # **NER** dummy response
-        st.write("**Entities:**", [{"entity": "Example", "label": "Dummy"}])
+        prompt = f"Extract and list the names, locations, and dates mentioned in the text:\n{text_input}"
+        entities = llm.generate_response(prompt)
+        st.write("**Entities:**", entities)
+        
 elif functionality == "**Question Answering**":
     context = st.text_area("Enter **Context**:")
     question = st.text_input("Enter your **Question**:")
     if st.button("Get Answer"):
-        prompt = f"Context: {preprocess_text(context)}\nQuestion: {question}"
+        prompt = f"Context: {context}\n\nQuestion: {question}\n\nAnswer:"
         answer = llm.generate_response(prompt)
         st.write("**Answer:**", answer)
