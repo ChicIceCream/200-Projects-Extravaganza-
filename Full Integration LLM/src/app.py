@@ -97,4 +97,3 @@ elif functionality == "**Question Answering**":
         prompt = f"Context: {context}\n\nQuestion: {question}\n\nAnswer:"
         answer = llm.generate_response(prompt)
         st.write("**Answer:**", answer)
-
