@@ -9,18 +9,30 @@ class HandDistanceMeasurer:
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands(
             static_image_mode=False,
-            max_num_hands=2,
+            max_num_hands=1,
             min_detection_confidence=0.7
         )
         self.mp_draw = mp.solutions.drawing_utils
 
-    def calculate_distance(self, landmark1, landmark2, frame_width, frame_height):
-        """Calculate Euclidean distance between two hand landmarks"""
-        x1, y1 = int(landmark1.x * frame_width), int(landmark1.y * frame_height)
-        x2, y2 = int(landmark2.x * frame_width), int(landmark2.y * frame_height)
+    def calculate_hand_depth(self, hand_landmarks, frame_width, frame_height):
+        """
+        Estimate hand depth from camera
+        Uses the relative size of landmarks and their vertical position
+        """
+        # Get vertical range of hand
+        y_coordinates = [landmark.y for landmark in hand_landmarks.landmark]
+        hand_height = max(y_coordinates) - min(y_coordinates)
         
-        distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
-        return distance, (x1, y1), (x2, y2)
+        # Get horizontal spread of hand
+        x_coordinates = [landmark.x for landmark in hand_landmarks.landmark]
+        hand_width = max(x_coordinates) - min(x_coordinates)
+        
+        # Estimate distance based on hand size in frame
+        # These factors are approximate and may need calibration
+        distance_cm = 50 / (hand_height * frame_height)  # Vertical depth estimation
+        width_distance = 50 / (hand_width * frame_width)  # Horizontal depth estimation
+        
+        return (distance_cm + width_distance) / 2  # Average of both estimates
 
     def process_frame(self, frame):
         # Convert BGR to RGB
@@ -29,7 +41,7 @@ class HandDistanceMeasurer:
         # Process the frame and detect hands
         results = self.hands.process(rgb_frame)
         
-        # If hands are detected
+        # If a hand is detected
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
                 # Draw hand landmarks
@@ -38,30 +50,19 @@ class HandDistanceMeasurer:
                     hand_landmarks, 
                     self.mp_hands.HAND_CONNECTIONS
                 )
-            
-            # If two hands are detected, measure key distances
-            if len(results.multi_hand_landmarks) == 2:
-                hand1, hand2 = results.multi_hand_landmarks
+                
+                # Calculate and display depth
                 height, width, _ = frame.shape
+                depth = self.calculate_hand_depth(hand_landmarks, width, height)
                 
-                # Calculate distances between key points
-                distances = {
-                    'Thumb Tips': self.calculate_distance(hand1.landmark[4], hand2.landmark[4], width, height),
-                    'Index Fingertips': self.calculate_distance(hand1.landmark[8], hand2.landmark[8], width, height),
-                    'Palm Centers': self.calculate_distance(hand1.landmark[0], hand2.landmark[0], width, height)
-                }
-                
-                # Draw distance lines and text
-                for name, (dist, pt1, pt2) in distances.items():
-                    cv2.line(frame, pt1, pt2, (0, 255, 0), 2)
-                    midpoint = ((pt1[0] + pt2[0]) // 2, (pt1[1] + pt2[1]) // 2)
-                    cv2.putText(frame, 
-                                f"{name}: {dist:.2f} px", 
-                                midpoint, 
-                                cv2.FONT_HERSHEY_SIMPLEX, 
-                                0.5, 
-                                (255, 0, 0), 
-                                2)
+                # Display depth information
+                cv2.putText(frame, 
+                            f"Estimated Distance: {depth:.2f} cm", 
+                            (10, 30), 
+                            cv2.FONT_HERSHEY_SIMPLEX, 
+                            1, 
+                            (0, 255, 0), 
+                            2)
         
         return frame
 
@@ -80,20 +81,20 @@ def main():
         # Flip frame horizontally
         frame = cv2.flip(frame, 1)
         
-        # Process frame and measure distances
+        # Process frame and measure distance
         frame = measurer.process_frame(frame)
         
-        # Display instructions
+        # Display additional instructions
         cv2.putText(frame, 
-                    "Show two hands to measure distances", 
-                    (10, 30), 
+                    "Move hand closer/further from camera", 
+                    (10, frame.shape[0] - 20), 
                     cv2.FONT_HERSHEY_SIMPLEX, 
-                    0.7, 
-                    (0, 0, 255), 
-                    2)
+                    0.5, 
+                    (255, 0, 0), 
+                    1)
         
         # Show the frame
-        cv2.imshow("Hand Distance Measurement", frame)
+        cv2.imshow("Hand to Screen Distance", frame)
         
         # Break loop with 'q'
         if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -104,3 +105,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    ######################### Code by Abhivyakt Bhati ############################
