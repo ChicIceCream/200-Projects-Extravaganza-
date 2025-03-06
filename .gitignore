@@ -6,3 +6,4 @@ all trials
 .cursorrules
 .devcontainer
 agents
+**/app.log
