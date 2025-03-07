@@ -16,13 +16,19 @@ def add_to_history(role, message):
 def get_history_text():
     return "\n".join([f"{entry['role'].capitalize()}: {entry['content']}" for entry in st.session_state.chat_history])
 
-# Standard NLP Tasks
+
+#* Summarization task
 def summarization_task(text_input, persona_style, llm, document_context):
     from llm_abstraction import apply_persona, add_document_context
-    base_prompt = f"Summarize the following text concisely:\n{text_input}"
+    base_prompt = f"""
+                    You are a summarising model. You will receive text and you will proceed to summarise the entire 
+                    text to the best of your ability. If it does not make sense, make that explicitly clear and ask 
+                    for more input rather than guessing. Summarise the following text: \n{text_input}
+                    """
     prompt = add_document_context(apply_persona(base_prompt, persona_style), document_context)
     return llm.generate_response(prompt)
 
+#* Sentiment analysis task
 def sentiment_analysis_task(text_input, persona_style, llm, document_context):
     from llm_abstraction import apply_persona, add_document_context
     base_prompt = f"Analyze the sentiment of the following text as positive, negative, or neutral:\n{text_input}"

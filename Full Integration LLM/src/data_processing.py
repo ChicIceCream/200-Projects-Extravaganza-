@@ -1,9 +1,11 @@
 import logging
 import pandas as pd
+import re
 from io import BytesIO
 from PyPDF2 import PdfReader
 import streamlit as st
 
+#* Existing document processing caching function
 @st.cache_data(show_spinner=False)
 def cached_process_documents(file_data):
     logging.info("Processing documents via cache.")
@@ -45,3 +47,23 @@ def process_documents(files):
         except Exception as e:
             logging.error(f"Error reading file {uploaded_file.name}: {e}")
     return cached_process_documents(file_data)
+
+#* Additional Data Processing Functions
+
+def remove_stopwords(text):
+    # Basic implementation: remove common English stopwords
+    stops = {"a", "an", "the", "is", "in", "on", "and", "or", "with", "of"}
+    tokens = text.split()
+    filtered_tokens = [word for word in tokens if word.lower() not in stops]
+    return " ".join(filtered_tokens)
+
+def normalize_text(text):
+    # Lowercase and remove extra spaces
+    return " ".join(text.lower().split())
+
+def remove_special_characters(text):
+    # Remove non-alphanumeric characters (except whitespace)
+    return re.sub(r'[^a-zA-Z0-9\s]', '', text)
+
+def tokenize_text(text):
+    return text.split()
