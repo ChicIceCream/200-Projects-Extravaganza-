@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import logging
 from dotenv import load_dotenv
-from llm_abstraction import GeminiLLM, GroqLLM, apply_persona, add_document_context
+from llm_abstraction import Gemini, Groq, apply_persona
 from data_processing import process_documents
 from nlp_tasks import (
     init_chat_history,
@@ -16,9 +16,8 @@ from nlp_tasks import (
     document_qa_task
 )
 
-#################################################################
-# Logging Setup
-#################################################################
+#* Logging Setup
+
 logging.basicConfig(
     filename="app.log",
     level=logging.INFO,
@@ -26,9 +25,8 @@ logging.basicConfig(
 )
 logging.info("Application startup.")
 
-#################################################################
-# Load Environment Variables
-#################################################################
+#* Load Environment Variables
+
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -42,27 +40,24 @@ if not GROQ_API_KEY:
     logging.error("Missing GROQ_API_KEY in .env")
     st.stop()
 
-#################################################################
-# Initialize LLM Based on Sidebar Selection
-#################################################################
-model_choice = st.sidebar.selectbox("Select Model", ["Gemini", "Groq"])
+#* Initialize LLM Based on Sidebar Selection
+
+model_choice = st.sidebar.selectbox("Select Model", ["Gemini-1.5-Flash", "Llama-3.3-70b-Versatile"])
 persona_style = st.sidebar.selectbox("Select Persona Style", ["Formal", "Professional", "Casual"])
 
 if model_choice == "Gemini":
-    llm = GeminiLLM()
+    llm = Gemini()
 elif model_choice == "Groq":
-    llm = GroqLLM("llama-3.3-70b-versatile", GROQ_API_KEY)
+    llm = Groq("llama-3.3-70b-versatile", GROQ_API_KEY)
 
-#################################################################
-# Initialize Conversation and Document Context
-#################################################################
+#* Initialize Conversation and Document Context
+
 init_chat_history()
 if "document_context" not in st.session_state:
     st.session_state.document_context = ""
 
-#################################################################
-# Sidebar: File Uploader for Documents (PDF, CSV, TXT)
-#################################################################
+#* Sidebar: File Uploader for Documents (PDF, CSV, TXT)
+
 uploaded_files = st.sidebar.file_uploader(
     "Upload your PDF, CSV, or TXT documents",
     accept_multiple_files=True,
@@ -78,20 +73,18 @@ if st.sidebar.button("Process Documents"):
     else:
         st.warning("Please upload at least one file.")
 
-#################################################################
-# Sidebar: Functionality Selection
-#################################################################
+#* Sidebar: Functionality Selection
+
 functionality = st.sidebar.selectbox("Choose Functionality", [
     "Home", "Summarization", "Sentiment Analysis", "NER", "Question Answering", "Code Generation", "Multi-Turn Dialogue", "Document QA"
 ])
 
-#################################################################
-# Main UI: Standard NLP Functionalities (with optional Document Context)
-#################################################################
-st.title("Arogo AI Assistant with Groq API Integration")
+#* Streamlit UI for functionality selection
+
+st.title("Full Integration LLM")
 
 if functionality == "Home":
-    st.write("Welcome to the Arogo AI Streamlit App. Use the sidebar to select a functionality.")
+    st.write("Welcome to the last destination you will need for AI inference! Use the sidebar to select a functionality.")
 
 elif functionality == "Summarization":
     text_input = st.text_area("Enter text for Summarization:")
@@ -130,16 +123,15 @@ elif functionality == "Code Generation":
         "JavaScript": "javascript",
         "Java": "java",
         "C++": "cpp",
-        "Other": "plaintext"
+        "Other": "Other"
     }
     if st.button("Generate Code"):
         output = code_generation_task(code_description, language, persona_style, llm, st.session_state.document_context)
         logging.info("Code Generation performed.")
         st.code(output, language=lang_map.get(language, "plaintext"))
 
-#################################################################
-# Main UI: Multi-Turn Dialogue
-#################################################################
+#* Streamlit UI for multi turn dialogue
+
 elif functionality == "Multi-Turn Dialogue":
     st.subheader("Multi-Turn Dialogue")
     history_text = get_history_text()
@@ -150,16 +142,15 @@ elif functionality == "Multi-Turn Dialogue":
     if st.button("Send"):
         add_to_history("user", user_message)
         dialogue_context = get_history_text()
-        # For pure dialogue, we use conversation history without document context
+        
         final_prompt = apply_persona(dialogue_context + "\n\nRespond to the conversation above.", persona_style)
         response = llm.generate_response(final_prompt)
         add_to_history("assistant", response)
         logging.info("Multi-turn dialogue message sent.")
         st.text_area("Updated Conversation", get_history_text(), height=150, disabled=True)
 
-#################################################################
-# Main UI: Document QA
-#################################################################
+#* Streamlit UI for Document Q & A
+
 elif functionality == "Document QA":
     st.subheader("Document QA")
     user_question = st.text_input("Ask a question about the uploaded documents:")

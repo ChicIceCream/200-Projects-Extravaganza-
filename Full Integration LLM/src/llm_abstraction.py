@@ -2,21 +2,21 @@ import logging
 import requests
 from google import generativeai as genai
 
-class GeminiLLM:
+class Gemini:
     def generate_response(self, prompt):
         logging.info("Generating response using Gemini.")
         model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content([prompt])
         return response.text
 
-class GroqLLM:
+class Groq:
     def __init__(self, model_name, api_key):
         self.model_name = model_name
         self.api_key = api_key
         self.base_url = "https://api.groq.com/openai/v1"
     
     def generate_response(self, prompt):
-        logging.info("Generating response using GroqLLM.")
+        logging.info("Generating response using Groq.")
         url = f"{self.base_url}/chat/completions"
         headers = {
             "Authorization": f"Bearer {self.api_key}",

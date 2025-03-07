@@ -1,0 +1,11 @@
+streamlit
+requests
+python-dotenv
+PyPDF2
+pandas
+langchain
+langchain_google_genai
+langchain_community
+google-generativeai
+scikit-learn
+pytest

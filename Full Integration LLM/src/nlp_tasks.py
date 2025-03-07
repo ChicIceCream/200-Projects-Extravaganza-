@@ -31,29 +31,46 @@ def summarization_task(text_input, persona_style, llm, document_context):
 #* Sentiment analysis task
 def sentiment_analysis_task(text_input, persona_style, llm, document_context):
     from llm_abstraction import apply_persona, add_document_context
-    base_prompt = f"Analyze the sentiment of the following text as positive, negative, or neutral:\n{text_input}"
+    base_prompt = f"""
+    You are a sentiment analysis model. Analyze the sentiment of the following text as positive, negative, 
+    or neutral to the best of your ability. If you are not able to clssify a certain sentiment, propose another 
+    sentiment that should make sense for this text:\n{text_input}
+    """
     prompt = add_document_context(apply_persona(base_prompt, persona_style), document_context)
     return llm.generate_response(prompt)
 
+#* Named Entity Recognition task
 def ner_task(text_input, persona_style, llm, document_context):
     from llm_abstraction import apply_persona, add_document_context
-    base_prompt = f"Extract and list the names, locations, and dates mentioned in the text:\n{text_input}"
+    base_prompt = f"""
+        You are a Named Entity Recognition model. Extract and list the names, locations, and dates mentioned in the text
+        to the best of your ability. If you are unable to find named entities, explicitly mention this 
+        in your output. Here is the test:\n{text_input}
+    """
     prompt = add_document_context(apply_persona(base_prompt, persona_style), document_context)
     return llm.generate_response(prompt)
 
+#* Question Answering task
 def question_answering_task(context, question, persona_style, llm, document_context):
     from llm_abstraction import apply_persona, add_document_context
-    base_prompt = f"Context: {context}\n\nQuestion: {question}\n\nAnswer:"
+    base_prompt = f"""
+    You are a simple question and answering mdoel. Here is the context: {context}\n\nQuestion: {question}\n\nAnswer:
+    """
     prompt = add_document_context(apply_persona(base_prompt, persona_style), document_context)
     return llm.generate_response(prompt)
 
+#* Code Generation task
 def code_generation_task(code_description, language, persona_style, llm, document_context):
     from llm_abstraction import apply_persona, add_document_context
-    base_prompt = f"Generate {language} code for the following problem:\n{code_description}"
+    base_prompt = f"""
+    You are an excellent code generation model. You know how to solve the problems in code with high accuracy. If you think
+    there is some problem with the code and you can't seem to understand the context, ask for more information.
+    Generate {language} code for the following problem:\n{code_description}
+    """
     prompt = add_document_context(apply_persona(base_prompt, persona_style), document_context)
     return llm.generate_response(prompt)
 
-# Document QA (Conversational QA Chain)
+#* Document QA (Conversational QA Chain)
 def get_conversational_chain():
     prompt_template = """
 Answer the question in as much detail as possible from the provided context.
@@ -69,10 +86,11 @@ Answer:
     chain = load_qa_chain(model_chain, chain_type="stuff", prompt=prompt)
     return chain
 
+#* Document QA task
 def document_qa_task(document_context, user_question):
     if document_context:
         chain = get_conversational_chain()
-        response = chain({"input_documents": [document_context], "question": user_question}, return_only_outputs=True)
+        response = chain({"Input_documents": [document_context], "question": user_question}, return_only_outputs=True)
         return response["output_text"]
     else:
         return "No document context available."
