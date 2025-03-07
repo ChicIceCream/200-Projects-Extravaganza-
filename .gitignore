@@ -7,3 +7,4 @@ all trials
 .devcontainer
 agents
 **/app.log
+**/__pycache__
