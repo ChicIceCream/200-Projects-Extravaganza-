@@ -1,7 +1,6 @@
 # Overview
 This is an abstraction layer on top of multiple Large Language Models. It supports multiple NLP tasks such as summarization, sentiment analysis, named entity recognition (NER), question answering, code generation, and multi-turn dialogue with document-based question answering.
 
-This project includes features such as data-preprocessing, unit tests and caching for efficient LLM inference.
 
 # Project Architecture
 ```
@@ -10,7 +9,7 @@ project-root/
 │   ├── llm_abstraction.py       # LLM classes 
 │   ├── data_processing.py       # File processing with caching + text preprocessing (stopwords, normalization, etc.)
 │   ├── nlp_tasks.py             # NLP tasks 
-│   ├── app.py                   # Streamlit UI + orchestration
+│   ├── app.py                   # Streamlit UI
 ├── tests/
 │       ├── test_data_processing.py  # Unit tests for data processing
 │       └── test_nlp_tasks.py        # Unit tests for NLP tasks

@@ -62,7 +62,6 @@ def normalize_text(text):
     return " ".join(text.lower().split())
 
 def remove_special_characters(text):
-    # Remove non-alphanumeric characters (except whitespace)
     return re.sub(r'[^a-zA-Z0-9\s]', '', text)
 
 def tokenize_text(text):
