@@ -4,7 +4,17 @@ import logging
 from dotenv import load_dotenv
 from llm_abstraction import GeminiLLM, GroqLLM, apply_persona, add_document_context
 from data_processing import process_documents
-from nlp_tasks import init_chat_history, add_to_history, get_history_text, summarization_task, sentiment_analysis_task, ner_task, question_answering_task, code_generation_task, document_qa_task
+from nlp_tasks import (
+    init_chat_history,
+    add_to_history,
+    get_history_text,
+    summarization_task,
+    sentiment_analysis_task,
+    ner_task,
+    question_answering_task,
+    code_generation_task,
+    document_qa_task
+)
 
 #################################################################
 # Logging Setup
@@ -72,7 +82,7 @@ if st.sidebar.button("Process Documents"):
 # Sidebar: Functionality Selection
 #################################################################
 functionality = st.sidebar.selectbox("Choose Functionality", [
-    "Home", "Summarization", "Sentiment Analysis", "NER", "Question Answering", "Code Generation", "Multi-Turn Dialogue & Document QA"
+    "Home", "Summarization", "Sentiment Analysis", "NER", "Question Answering", "Code Generation", "Multi-Turn Dialogue", "Document QA"
 ])
 
 #################################################################
@@ -128,9 +138,9 @@ elif functionality == "Code Generation":
         st.code(output, language=lang_map.get(language, "plaintext"))
 
 #################################################################
-# Main UI: Multi-Turn Dialogue & Document QA
+# Main UI: Multi-Turn Dialogue
 #################################################################
-elif functionality == "Multi-Turn Dialogue & Document QA":
+elif functionality == "Multi-Turn Dialogue":
     st.subheader("Multi-Turn Dialogue")
     history_text = get_history_text()
     if history_text:
@@ -140,18 +150,18 @@ elif functionality == "Multi-Turn Dialogue & Document QA":
     if st.button("Send"):
         add_to_history("user", user_message)
         dialogue_context = get_history_text()
-        doc_context = st.session_state.document_context if st.session_state.document_context.strip() else ""
-        full_prompt = f"{dialogue_context}"
-        if doc_context:
-            full_prompt += f"\n\nDocument Context:\n{doc_context}"
-        full_prompt += "\n\nRespond to the conversation above."
-        final_prompt = apply_persona(full_prompt, persona_style)
+        # For pure dialogue, we use conversation history without document context
+        final_prompt = apply_persona(dialogue_context + "\n\nRespond to the conversation above.", persona_style)
         response = llm.generate_response(final_prompt)
         add_to_history("assistant", response)
         logging.info("Multi-turn dialogue message sent.")
         st.text_area("Updated Conversation", get_history_text(), height=150, disabled=True)
-    
-    st.markdown("### Document QA")
+
+#################################################################
+# Main UI: Document QA
+#################################################################
+elif functionality == "Document QA":
+    st.subheader("Document QA")
     user_question = st.text_input("Ask a question about the uploaded documents:")
     if st.button("Get Document Answer"):
         output = document_qa_task(st.session_state.document_context, user_question)
