@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import logging
 from dotenv import load_dotenv
-from llm_abstraction import Gemini, Groq, apply_persona
+from llm_abstraction import Gemini, Groq, apply_persona, add_document_context
 from data_processing import process_documents
 from nlp_tasks import (
     init_chat_history,
@@ -45,9 +45,9 @@ if not GROQ_API_KEY:
 model_choice = st.sidebar.selectbox("Select Model", ["Gemini-1.5-Flash", "Llama-3.3-70b-Versatile"])
 persona_style = st.sidebar.selectbox("Select Persona Style", ["Formal", "Professional", "Casual"])
 
-if model_choice == "Gemini":
+if model_choice == "Gemini-1.5-Flash":
     llm = Gemini()
-elif model_choice == "Groq":
+elif model_choice == "Llama-3.3-70b-Versatile":
     llm = Groq("llama-3.3-70b-versatile", GROQ_API_KEY)
 
 #* Initialize Conversation and Document Context
