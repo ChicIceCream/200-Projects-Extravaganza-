@@ -1,18 +1,17 @@
 from flask import Flask, Response, jsonify
 import cv2
 import numpy as np
-import tensorflow as tf
+
 from tensorflow import keras
-import threading
-import time
 
 
 app = Flask(__name__)
 
 # Initialize once when the app starts
 capture = cv2.VideoCapture(0)  # Camera input
-model = keras.model.load_model('keras_model.h5', compile=False)
-class_names = [line.strip() for line in open("labels.txt", "r")]
+model = keras.models.load_model('C:\\Users\\User\\Desktop\\python_in_vs\\200 Projects!\\Flask Endpoint\\keras_model.h5')
+class_names = [line.strip() for line in open("C:\\Users\\User\\Desktop\\python_in_vs\\200 Projects!\\Flask Endpoint\\labels.txt", "r").readlines()]
+
 
 # Shared variables
 latest_class = ""
