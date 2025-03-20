@@ -1,4 +1,4 @@
-def capitalize(string):
+def wrong_name(string):
     new_string = string.split()
     list(new_string)
     
@@ -9,4 +9,4 @@ def capitalize(string):
     
     return capitalized_string
 
-print(capitalize("Today is good day"))
+print(wrong_name("Today is good day"))
