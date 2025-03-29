@@ -6,7 +6,7 @@ from threading import Thread
 import json
 
 OLLAMA_URL = "http://localhost:11435/api/generate"  # Ollama API
-MODEL_NAME = "mistral:7b-instruct-v0.2-q4_K_S"  # Change this to your model
+MODEL_NAME = "mistral:7b-instruct-v0.2-q4_K_S"  # Change this to your model of choice
 
 def query_ollama(prompt):
     """Sends prompt to Ollama and gets the response."""
@@ -37,16 +37,54 @@ def show_response(text):
 
     window.mainloop()
 
-def process_selection():
-    """Gets text from clipboard, queries AI, and shows result."""
+def wrong_name():
     text = pyperclip.paste().strip()
-    if not text:
-        return
-    
-    response = query_ollama(text)
-    
-    # Show result in a separate thread (so it doesn't block)
-    Thread(target=show_response, args=(response,), daemon=True).start()
+    if not text```python
+    :
+        print('Please paste something')
+    else:
+        print('Your text is:', text)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Set global shortcut 
 keyboard.add_hotkey("ctrl+shift+e", process_selection)
