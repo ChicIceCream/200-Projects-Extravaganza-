@@ -26,4 +26,5 @@ finance_agent = Agent(
     add_history_to_messages=True,
     markdown=True,
 )
+
 app = Playground(agents=[finance_agent, web_agent]).get_app()
