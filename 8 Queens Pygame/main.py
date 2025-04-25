@@ -1,7 +1,6 @@
 import pygame
 import sys
 import time
-
 # Initialize pygame
 pygame.init()
 
