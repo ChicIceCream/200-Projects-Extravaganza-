@@ -1,7 +1,6 @@
 # Overview
 This is an abstraction layer on top of multiple Large Language Models. It supports multiple NLP tasks such as summarization, sentiment analysis, named entity recognition (NER), question answering, code generation, and multi-turn dialogue with document-based question answering.
 
-
 # Project Architecture
 ```
 project-root/
